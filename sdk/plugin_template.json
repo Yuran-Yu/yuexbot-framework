@@ -1,0 +1,9 @@
+{
+  "permissions": [
+    "events",
+    "send_message",
+    "onebot_api",
+    "config",
+    "data_dir"
+  ]
+}

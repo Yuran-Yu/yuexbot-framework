@@ -1,0 +1,24 @@
+{
+  "channels": {
+    "stable": {
+      "version": "1.1.0",
+      "url": "https://example.com/yuexbot/YuexBot-v1.1.0.zip",
+      "sha256": "",
+      "mandatory": false,
+      "notes": [
+        "Embedded UI package",
+        "Native plugin SDK baseline",
+        "Multi-account connection improvements"
+      ]
+    },
+    "beta": {
+      "version": "1.2.0-beta.1",
+      "url": "https://example.com/yuexbot/YuexBot-v1.2.0-beta.1.zip",
+      "sha256": "",
+      "mandatory": false,
+      "notes": [
+        "Telemetry service integration preview"
+      ]
+    }
+  }
+}

@@ -1,0 +1,89 @@
+# OS / editor
+.vs/
+.vscode/
+*.user
+*.suo
+*.VC.db
+Thumbs.db
+Desktop.ini
+
+# Build outputs
+*.exe
+*.dll
+*.lib
+*.exp
+*.obj
+*.o
+*.a
+*.ii
+*.s
+*.pdb
+
+# Logs / traces / temp
+*.log
+*.txt
+stdout.log
+stderr.log
+startup_trace*.log
+
+# Runtime data
+accounts.json
+config.json
+settings.json
+corn/
+data/
+Log/
+JadeView_data/
+YuexBot_embedded_ui/
+www_x86_min/
+月溪sky/
+plugins_disabled/
+plugins_disabled_test/
+plugins_x86test_disabled/
+
+# Release packages
+release/
+*.zip
+
+# Plugin runtime and test artifacts
+plugins/*.dll
+plugins/*.a
+plugins/*.lib
+plugins/*.exp
+plugins/*.json
+plugins/*.info.json
+plugin/*.dll
+plugin/*.a
+plugin/*.lib
+plugin/*.exp
+plugin/*.json
+plugin/*.info.json
+plugin/*_data/
+plugin/灏忔牀瀛愬簲鐢╛data/
+main/plugin/*.dll
+main/plugin/*.json
+main/plugin/*.info.json
+main/bin/
+main/data/
+main/corn/
+
+# Generated / embedded UI artifacts
+embedded_ui.h
+update.b64
+
+# WebView / browser cache under release-like trees
+**/JadeView_data/
+**/EBWebView/
+
+# Local backups / scratch
+*.bak
+*.v2bak
+test*.js
+test*.txt
+
+# Keep source examples and docs
+!plugin/README.md
+!plugin/*.cpp
+!sdk/examples/*.cpp
+!sdk/examples/*.json
+!sdk/examples/*.info.json

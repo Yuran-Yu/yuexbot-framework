@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YuexBot Service Console</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="./logo.svg" alt="YuexBot">
+      <div>
+        <strong>YuexBot</strong>
+        <span>Service Console</span>
+      </div>
+    </div>
+    <nav>
+      <a class="active" href="#overview">概览</a>
+      <a href="#updates">更新</a>
+      <a href="#clients">客户端</a>
+      <a href="#plugins">插件风控</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h1>服务端控制台</h1>
+        <p>更新检查、数据上报、账号统计、插件违规检测</p>
+      </div>
+      <div class="status-pill" id="health">检查中</div>
+    </header>
+
+    <section class="cards" id="overview">
+      <article class="metric">
+        <span>客户端</span>
+        <strong id="totalClients">0</strong>
+        <small>已上报实例</small>
+      </article>
+      <article class="metric">
+        <span>账号</span>
+        <strong id="totalAccounts">0</strong>
+        <small>账号统计汇总</small>
+      </article>
+      <article class="metric">
+        <span>插件</span>
+        <strong id="totalPlugins">0</strong>
+        <small>插件上报数量</small>
+      </article>
+      <article class="metric danger">
+        <span>违规</span>
+        <strong id="totalViolations">0</strong>
+        <small>规则命中记录</small>
+      </article>
+    </section>
+
+    <section class="panel" id="updates">
+      <div class="panel-head">
+        <div>
+          <h2>更新策略</h2>
+          <p>客户端通过 `/api/v1/update/check` 获取版本信息。</p>
+        </div>
+        <button id="refreshBtn">刷新</button>
+      </div>
+      <div class="release-row">
+        <div>
+          <span>Stable</span>
+          <strong id="stableVersion">1.1.0</strong>
+        </div>
+        <div>
+          <span>Beta</span>
+          <strong id="betaVersion">1.2.0-beta.1</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="split">
+      <article class="panel" id="clients">
+        <div class="panel-head compact">
+          <h2>最近客户端</h2>
+        </div>
+        <div class="table" id="clientRows"></div>
+      </article>
+
+      <article class="panel" id="plugins">
+        <div class="panel-head compact">
+          <h2>插件违规</h2>
+        </div>
+        <div class="table" id="violationRows"></div>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head compact">
+        <h2>上报事件</h2>
+      </div>
+      <div class="event-list" id="eventRows"></div>
+    </section>
+  </main>
+</div>
+<script src="./app.js"></script>
+</body>
+</html>

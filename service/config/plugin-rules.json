@@ -1,0 +1,16 @@
+{
+  "banned_ids": [
+    "malicious_plugin_sample"
+  ],
+  "banned_keywords": [
+    "token stealer",
+    "password dump",
+    "remote shell",
+    "credential"
+  ],
+  "suspicious_permissions": [
+    "process_exec",
+    "filesystem_full",
+    "network_raw"
+  ]
+}

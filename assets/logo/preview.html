@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YuexBot Logo Preview</title>
+<style>
+:root{
+  --bg:#edf5ff;
+  --panel:#ffffff;
+  --line:#dbe8ff;
+  --text:#172033;
+  --muted:#74839d;
+  --accent:#4c8dff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  color:var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(129,188,255,.28), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(84,200,255,.16), transparent 24%),
+    linear-gradient(180deg, #f7fbff 0%, var(--bg) 100%);
+  font-family:"Segoe UI Variable","Segoe UI","Microsoft YaHei",sans-serif;
+}
+.wrap{max-width:1220px;margin:0 auto;padding:56px 32px}
+.eyebrow{
+  display:inline-flex;
+  padding:8px 14px;
+  border-radius:999px;
+  background:#e8f1ff;
+  color:var(--accent);
+  font-size:13px;
+  font-weight:700;
+}
+h1{margin:16px 0 10px;font-size:40px;line-height:1.08;font-weight:800;letter-spacing:0}
+.sub{margin:0 0 30px;color:var(--muted);font-size:16px;line-height:1.7;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.card{
+  background:rgba(255,255,255,.88);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:26px 24px 24px;
+  box-shadow:0 16px 40px rgba(88,132,215,.08);
+  backdrop-filter:blur(10px);
+}
+.card.is-picked{
+  border-color:#9dc2ff;
+  box-shadow:0 18px 44px rgba(76,141,255,.16);
+}
+.badge{
+  display:inline-flex;
+  margin-bottom:18px;
+  padding:7px 12px;
+  border-radius:999px;
+  background:#eaf2ff;
+  color:#3d7cf0;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.icon-shell{
+  display:grid;
+  place-items:center;
+  height:208px;
+  margin-bottom:16px;
+  border-radius:20px;
+  background:linear-gradient(180deg, rgba(246,250,255,.92), rgba(237,244,255,.92));
+}
+.icon{width:176px;height:176px;display:block}
+.title{margin:0 0 8px;font-size:24px;font-weight:800}
+.desc{margin:0;color:var(--muted);font-size:15px;line-height:1.65}
+.meta{margin-top:14px;color:#3d7cf0;font-size:13px;font-weight:700}
+@media (max-width:960px){
+  .grid{grid-template-columns:1fr}
+  h1{font-size:34px}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <span class="eyebrow">YUEXBOT BRAND</span>
+  <h1>Cleaner logo directions for YuexBot</h1>
+  <p class="sub">This round is tighter and more product-like: fewer shapes, stronger silhouette, and better small-size recognition for desktop app icons.</p>
+  <section class="grid">
+    <article class="card is-picked">
+      <span class="badge">Recommended</span>
+      <div class="icon-shell"><img class="icon" src="./yuexbot-logo-a.svg" alt="Logo A"></div>
+      <h2 class="title">A / Lunar Stream</h2>
+      <p class="desc">The strongest balance of brand and product. The crescent gives Yuex its identity, while the wave and nodes hint at message flow and multi-account links.</p>
+      <div class="meta">Best fit for app icon and title bar</div>
+    </article>
+    <article class="card">
+      <div class="icon-shell"><img class="icon" src="./yuexbot-logo-b.svg" alt="Logo B"></div>
+      <h2 class="title">B / Y Network</h2>
+      <p class="desc">More technical and framework-like. The Y-shaped structure feels neat and modern, with a stronger tooling-platform tone.</p>
+      <div class="meta">Best fit for SDK or developer brand</div>
+    </article>
+    <article class="card">
+      <div class="icon-shell"><img class="icon" src="./yuexbot-logo-c.svg" alt="Logo C"></div>
+      <h2 class="title">C / Chat Moon</h2>
+      <p class="desc">Warmer and more conversational. The speech bubble reads clearly at a glance, but it is less distinct as a technical framework mark.</p>
+      <div class="meta">Best fit for bot client feel</div>
+    </article>
+  </section>
+</main>
+</body>
+</html>

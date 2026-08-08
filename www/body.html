@@ -1,0 +1,117 @@
+<!-- Title Bar -->
+<div class="title-bar">
+  <div class="title-bar-left">
+    <div class="bot-avatar" id="botAvatar">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="8" width="16" height="12" rx="3" fill="#fff"/>
+        <circle cx="9" cy="14" r="1.5" fill="#4C8DFF"/>
+        <circle cx="15" cy="14" r="1.5" fill="#4C8DFF"/>
+        <path d="M9 17.5C9 17.5 10.5 19 12 19C13.5 19 15 17.5 15 17.5" stroke="#4C8DFF" stroke-width="1.2" stroke-linecap="round"/>
+        <rect x="8" y="5" width="8" height="3" rx="1.5" fill="#fff"/>
+        <circle cx="8" cy="4" r="1" fill="#4C8DFF"/>
+        <circle cx="16" cy="4" r="1" fill="#4C8DFF"/>
+      </svg>
+    </div>
+    <div class="title-text">
+      <h1>YuexBot</h1>
+      <div class="subtitle" id="titleSubtitle">QQ: --- · OneBot 11</div>
+    </div>
+  </div>
+  <div class="title-bar-right">
+    <div class="pill disconnected" id="topStatus"><span class="dot"></span><span id="topStatusText">未连接</span></div>
+    <div class="pill metric">延迟: <span class="val" id="pillLatency">--ms</span></div>
+    <div class="pill metric">CPU: <span class="val" id="pillCPU">--%</span></div>
+    <div class="pill metric">内存: <span class="val" id="pillMem">--MB</span></div>
+  </div>
+</div>
+<div class="layout">
+  <div class="sidebar">
+    <div class="sidebar-nav">
+      <div class="sidebar-item active" data-page="dashboard" id="nav-dashboard"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg><span>仪表盘</span></div>
+      <div class="sidebar-item" data-page="accounts" id="nav-accounts"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span>账号</span></div>
+      <div class="sidebar-item" data-page="plugins" id="nav-plugins"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span>插件</span></div>
+      <div class="sidebar-item" data-page="groups" id="nav-groups"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg><span>群组</span></div>
+      <div class="sidebar-item" data-page="messages" id="nav-messages"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg><span>消息</span><span class="sidebar-badge" id="badgeMsg">0</span></div>
+      <div class="sidebar-item" data-page="logs" id="nav-logs"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg><span>日志</span></div>
+      <div class="sidebar-item" data-page="settings" id="nav-settings"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg><span>设置</span></div>
+    </div>
+    <div class="sidebar-bottom">
+      <div class="sidebar-version">YuexBot v1.0</div>
+      <div class="sidebar-icon-btn" id="btnThemeToggle" title="切换主题"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg></div>
+      <div class="sidebar-icon-btn" id="btnQuit" title="退出"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42C17.99 7.86 19 9.81 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-2.19 1.01-4.14 2.58-5.42L6.17 5.17C4.23 6.82 3 9.26 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.74-1.23-5.18-3.17-6.83z"/></svg></div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="page active" id="page-dashboard">
+      <h2 class="section-title">数据概览</h2>
+      <div class="stats-grid">
+        <div class="stat-card blue"><div class="stat-card-icon"><svg viewBox="0 0 24 24" fill="#4C8DFF"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div><div class="stat-card-body"><div class="stat-card-label">好友数量</div><div class="stat-card-value" id="statFriends">0</div><div class="stat-card-sub">今日新增 <span class="stat-up">+0</span></div></div></div>
+        <div class="stat-card orange"><div class="stat-card-icon"><svg viewBox="0 0 24 24" fill="#FF9500"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div><div class="stat-card-body"><div class="stat-card-label">群聊数量</div><div class="stat-card-value" id="statGroups">0</div><div class="stat-card-sub">今日新增 <span class="stat-up">+0</span></div></div></div>
+        <div class="stat-card purple"><div class="stat-card-icon"><svg viewBox="0 0 24 24" fill="#AF52DE"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg></div><div class="stat-card-body"><div class="stat-card-label">消息总数</div><div class="stat-card-value" id="statMessages">0</div><div class="stat-card-sub">今日新增 <span class="stat-up">+0</span></div></div></div>
+        <div class="stat-card green"><div class="stat-card-icon"><svg viewBox="0 0 24 24" fill="#34C759"><path d="M15 9H9v6h6V9zm-2 4h-2v-2h2v2zm8-4V9h-2V7c0-1.1-.9-2-2-2h-2V3h-2v2h-2V3H9v2H7c-1.1 0-2 .9-2 2v2H3v2h2v2H3v2h2v2c0 1.1.9 2 2 2h2v2h2v-2h2v2h2v-2h2c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2zm-4 6H7V7h10v10z"/></svg></div><div class="stat-card-body"><div class="stat-card-label">CPU 使用率</div><div class="stat-card-value" id="statCPU">0%</div><div class="stat-card-sub">运行流畅</div></div></div>
+        <div class="stat-card teal"><div class="stat-card-icon"><svg viewBox="0 0 24 24" fill="#5AC8FA"><path d="M2 20h20v-4H2v4zm2-3h2v2H4v-2zM2 4v4h20V4H2zm4 3H4V5h2v2zm-4 7h20v-4H2v4zm2-3h2v2H4v-2z"/></svg></div><div class="stat-card-body"><div class="stat-card-label">内存占用</div><div class="stat-card-value" id="statMem">0MB</div><div class="stat-card-sub">共 0.00GB</div></div></div>
+        <div class="stat-card red"><div class="stat-card-icon"><svg viewBox="0 0 24 24" fill="#FF3B30"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg></div><div class="stat-card-body"><div class="stat-card-label">WS 延迟</div><div class="stat-card-value" id="statLatency">--ms</div><div class="stat-card-sub">连接稳定</div></div></div>
+      </div>
+      
+      <div class="conn-info-card"><div class="conn-info-header"><h2 class="section-title">连接信息</h2><div class="conn-mode-badge" id="connModeBadge"><span class="conn-mode-dot"></span><span id="connMode">反向 WebSocket</span></div></div><div class="conn-ports-row"><div class="conn-port-item active" id="connReverseItem"><div class="conn-port-label">反向 WS</div><div class="conn-port-value" id="connReversePort">3001</div><div class="conn-port-tag">被动连接</div></div><div class="conn-port-item dimmed" id="connForwardItem"><div class="conn-port-label">正向 WS</div><div class="conn-port-value" id="connForwardPort">3002</div><div class="conn-port-tag">主动连接</div></div><div class="conn-port-item dimmed" id="connHttpItem"><div class="conn-port-label">HTTP POST</div><div class="conn-port-value" id="connHttpPort">3003</div><div class="conn-port-tag">回调推送</div></div></div><div class="conn-detail-row"><div class="conn-detail-item"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg><span class="conn-detail-label">API 地址</span><span class="conn-detail-value" id="connApiAddr">127.0.0.1</span></div><div class="conn-detail-item"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg><span class="conn-detail-label">Token</span><span class="conn-detail-value" id="connTokenStatus">未设置</span></div></div></div>
+      <div class="quick-actions-card">
+        <h2 class="section-title">快捷操作</h2>
+        <div class="quick-actions">
+        <button class="action-btn primary" id="btnConnect"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>启动 Bot</button>
+        <button class="action-btn" id="btnReconnect"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>重连</button>
+        <button class="action-btn" id="btnClearLogs"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>清空日志</button>
+        <button class="action-btn" id="btnExportLogs"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>导出日志</button>
+        </div>
+      </div>
+      <h2 class="section-title">日志输出</h2>
+      <div class="log-section">
+        <div class="log-header">
+          <div class="log-tabs">
+            <button class="log-tab active" data-filter="all">全部</button>
+            <button class="log-tab" data-filter="system">系统</button>
+            <button class="log-tab" data-filter="group">群聊</button>
+            <button class="log-tab" data-filter="private">私聊</button>
+            <button class="log-tab" data-filter="warning">警告</button>
+            <button class="log-tab" data-filter="error">错误</button>
+          </div>
+          <div class="log-actions">
+            <div class="log-search-wrap"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg><input type="text" id="logSearch" placeholder="搜索日志..." class="log-search-input"></div>
+            <button class="log-clear-btn" id="btnClearLogs2"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg> 清空</button>
+          </div>
+        </div>
+        <div class="log-body" id="logBody"><div class="log-empty">暂无日志</div></div>
+      </div>
+    </div>
+    <div class="page" id="page-plugins"><h2 class="section-title">插件管理</h2><div class="plugin-grid" id="pluginGrid"></div></div>
+    <div class="page" id="page-accounts"><h2 class="section-title">账号管理</h2><div class="account-toolbar"><button class="action-btn primary" id="btnAddAccount"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>添加账号</button></div><div class="account-grid" id="accountGrid"><div class="empty-state"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><p>暂无账号</p><p class="hint">点击上方按钮添加第一个账号</p></div></div></div>
+
+    <div class="page" id="page-groups"><h2 class="section-title">群管理</h2><div class="table-section"><div class="table-header"><div class="table-search-wrap"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg><input type="text" id="groupSearch" placeholder="搜索群组..." class="log-search-input"></div></div><div class="table-body" id="groupsTable"><table class="data-table"><thead><tr><th>群号</th><th>群名称</th><th>人数</th><th>操作</th></tr></thead><tbody id="groupsTableBody"></tbody></table><div class="log-empty" id="groupsEmpty">暂无数据</div></div></div></div>
+    <div class="page" id="page-messages"><h2 class="section-title">消息中心</h2><div class="log-section"><div class="log-header"><div class="log-tabs"><button class="log-tab active" data-filter="all" data-scope="msg">全部</button><button class="log-tab" data-filter="system" data-scope="msg">系统</button><button class="log-tab" data-filter="group" data-scope="msg">群聊</button><button class="log-tab" data-filter="private" data-scope="msg">私聊</button></div><div class="log-actions"><div class="log-search-wrap"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg><input type="text" id="logSearchMsg" placeholder="搜索..." class="log-search-input"></div><button class="log-clear-btn" id="btnClearLogs3"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg> 清空</button></div></div><div class="log-body" id="logBodyMsg"><div class="log-empty">暂无消息</div></div></div></div>
+    <div class="page" id="page-logs"><h2 class="section-title">日志</h2><div class="log-section"><div class="log-header"><div class="log-tabs"><button class="log-tab active" data-filter="all" data-scope="alllogs">全部</button><button class="log-tab" data-filter="system" data-scope="alllogs">系统</button><button class="log-tab" data-filter="group" data-scope="alllogs">群聊</button><button class="log-tab" data-filter="private" data-scope="alllogs">私聊</button><button class="log-tab" data-filter="warning" data-scope="alllogs">警告</button><button class="log-tab" data-filter="error" data-scope="alllogs">错误</button></div><div class="log-actions"><div class="log-search-wrap"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg><input type="text" id="logSearchAll" placeholder="搜索日志..." class="log-search-input"></div><button class="log-clear-btn" id="btnClearLogsAll"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg> 清空</button></div></div><div class="log-body" id="logBodyAll"><div class="log-empty">暂无日志</div></div></div></div>
+    <div class="page" id="page-settings"><h2 class="section-title">设置</h2>
+      <div class="settings-section"><h3>连接设置</h3>
+        <div class="form-row"><div class="form-label">连接方式</div><div class="radio-group" id="connModeGroup"><div class="radio-btn active" data-mode="reverse-ws">反向 WebSocket</div><div class="radio-btn" data-mode="forward-ws">正向 WebSocket</div><div class="radio-btn" data-mode="http-post">HTTP POST</div></div></div>
+        <div class="form-row"><div class="form-label">API 地址</div><input class="form-input" id="setHost" value="127.0.0.1" placeholder="127.0.0.1"></div>
+        <div class="form-row"><div class="form-label">端口号</div><input class="form-input" id="setPort" value="3001" placeholder="3001"></div>
+        <div class="form-row"><div class="form-label">Access Token</div><input class="form-input" id="setToken" type="password" placeholder="可选"></div>
+        <div class="form-row" id="wsEventRow" style="display:none"><div class="form-label">事件地址</div><input class="form-input" id="setWsEvent" placeholder="ws://127.0.0.1:3002"></div>
+        <div class="settings-actions"><button class="action-btn primary" id="btnSaveSettings">保存设置</button><button class="action-btn" id="btnTestConn">测试连接</button></div>
+      </div>
+      <div class="settings-section"><h3>应用设置</h3>
+        <div class="form-row"><div class="form-label">开机自启</div><label class="toggle"><input type="checkbox" id="setAutoStart"><span class="slider"></span></label></div>
+        <div class="form-row"><div class="form-label">最小化到托盘</div><label class="toggle"><input type="checkbox" id="setTray" checked><span class="slider"></span></label></div>
+        <div class="form-row"><div class="form-label">日志保存</div><label class="toggle"><input type="checkbox" id="setLogSave" checked><span class="slider"></span></label></div>
+      </div>
+      <div class="settings-section"><h3>关于</h3>
+        <div class="form-row"><div class="form-label">版本</div><span class="about-text">YuexBot v1.0.0</span></div>
+        <div class="form-row"><div class="form-label">UI 引擎</div><span class="about-text">JadeView (WebView2)</span></div>
+        <div class="form-row"><div class="form-label">协议</div><span class="about-text">OneBot 11</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="status-bar"><div class="status-bar-left"><span class="dot" id="statusDot" style="background:var(--orange)"></span><span class="conn-text" id="statusConnText">未连接</span><span>运行时长 <span id="statusUptime">00:00:00</span></span><span>消息 <span id="statusMsg">0</span></span><span>插件 <span id="statusPlugins">12</span></span><span>事件 <span id="statusEvents">0</span></span></div><div class="status-bar-right"><span id="statusTime"></span></div></div>
+<div class="toast" id="toast"></div>
+<div class="context-menu" id="contextMenu"><div class="context-menu-item" data-action="ctx-connect">连接</div><div class="context-menu-item" data-action="ctx-disconnect">断开连接</div><div class="context-menu-sep"></div><div class="context-menu-item" data-action="ctx-edit">编辑配置</div><div class="context-menu-item danger" data-action="ctx-delete">删除账号</div></div>
+<div class="modal-overlay" id="modalOverlay"><div class="modal"><div class="modal-title" id="modalTitle">发送消息</div><div class="modal-body"><div id="modalContent"></div></div><div class="modal-footer"><button class="modal-btn" id="modalCancel">取消</button><button class="modal-btn primary" id="modalConfirm">发送</button></div></div></div>
+<div class="modal-overlay" id="accountModalOverlay"><div class="modal" style="min-width:480px;max-width:560px"><div class="modal-title" id="accountModalTitle">添加账号</div><div class="modal-body"><div class="config-form"><div class="config-row"><div class="config-label">账号名称</div><input class="config-input" id="cfgName" placeholder="例如: 我的QQ号"></div><div class="config-row"><div class="config-label">QQ 号</div><input class="config-input" id="cfgQQ" placeholder="123456789"></div><div class="config-row"><div class="config-label">连接方式</div><select class="config-select" id="cfgMode"><option value="reverse-ws">反向 WebSocket</option><option value="forward-ws">正向 WebSocket</option><option value="http-post">HTTP POST</option></select></div><div class="config-row"><div class="config-label">API 地址</div><input class="config-input" id="cfgHost" value="127.0.0.1" placeholder="127.0.0.1"></div><div class="config-row"><div class="config-label">端口号</div><input class="config-input" id="cfgPort" value="3001" placeholder="3001"></div><div class="config-row"><div class="config-label">Access Token</div><input class="config-input" id="cfgToken" type="password" placeholder="可选"></div><div class="config-hint" id="cfgHint">反向 WebSocket 模式下，OneBot 服务端会主动连接本程序</div></div></div><div class="modal-footer"><button class="modal-btn" id="accountModalCancel">取消</button><button class="modal-btn primary" id="accountModalConfirm">保存</button></div></div></div>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Test</title>
+<style>
+body{font-family:"Microsoft YaHei",sans-serif;background:#f0f2f5;margin:0;padding:40px}
+.btn{padding:12px 24px;background:#4da6ff;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:14px;margin:8px}
+.btn:hover{background:#3d96ef}
+#output{margin-top:20px;padding:16px;background:#fff;border-radius:8px;font-size:13px}
+.log{color:#52c41a}.err{color:#ff4d4f}
+</style>
+</head>
+<body>
+<h2>JadeView 功能测试</h2>
+<button class="btn" onclick="testClick()">测试点击</button>
+<button class="btn" onclick="testJade()">测试 Jade IPC</button>
+<button class="btn" onclick="testNav()">测试页面切换</button>
+<div id="output"></div>
+<div id="page1" style="background:#e8f4fd;padding:20px;border-radius:8px;margin-top:16px">页面 1 内容</div>
+<div id="page2" style="background:#f0faf0;padding:20px;border-radius:8px;margin-top:16px;display:none">页面 2 内容</div>
+<script>
+var out = document.getElementById("output");
+function log(msg, cls) {
+  var div = document.createElement("div");
+  div.className = cls || "log";
+  div.textContent = "[" + new Date().toLocaleTimeString() + "] " + msg;
+  out.appendChild(div);
+}
+function testClick() {
+  log("点击事件正常工作!");
+}
+function testJade() {
+  if (typeof jade === "undefined") {
+    log("jade 对象不可用", "err");
+  } else {
+    log("jade 对象可用, 类型: " + typeof jade);
+    try {
+      jade.invoke("get-status", {}).then(function(r) {
+        log("IPC 返回: " + JSON.stringify(r));
+      }).catch(function(e) {
+        log("IPC 错误: " + e, "err");
+      });
+    } catch(e) {
+      log("jade.invoke 异常: " + e.message, "err");
+    }
+  }
+}
+var navState = 1;
+function testNav() {
+  navState = navState === 1 ? 2 : 1;
+  document.getElementById("page1").style.display = navState === 1 ? "block" : "none";
+  document.getElementById("page2").style.display = navState === 2 ? "block" : "none";
+  log("切换到页面 " + navState);
+}
+log("JavaScript 已加载执行");
+log("jade 对象: " + (typeof jade !== "undefined" ? "可用" : "不可用"));
+</script>
+</body>
+</html>
